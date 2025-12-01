@@ -1,0 +1,5 @@
+# Rust Study 2025 Quiz
+
+## LICENSE
+
+[MIT LICENSE](./LICENSE)
