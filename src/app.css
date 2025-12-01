@@ -62,3 +62,7 @@ body {
     "Segoe UI Symbol",
     sans-serif;
 }
+
+.colab-gradient {
+  @apply bg-linear-to-r from-[#FF5C0B] to-[#FF1D70] bg-clip-text text-transparent;
+}

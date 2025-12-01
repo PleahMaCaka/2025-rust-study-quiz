@@ -11,6 +11,10 @@ const QUIZ = {
 } as const
 </script>
 
+<svelte:head>
+  <title>Rust Study - Quiz #{id}</title>
+</svelte:head>
+
 {#if id !== null && id in QUIZ}
   {@const meta = QUIZ[id as keyof typeof QUIZ].metadata}
   <div class="flex flex-col prose mx-auto">
@@ -40,5 +44,10 @@ const QUIZ = {
       {/each}
     {/if}
     <button class="btn btn-primary">Submit</button>
+  </div>
+{:else}
+  <div class="flex flex-col gap-2">
+    <p>What are you doing here?</p>
+    <a class="btn btn-primary" href="/">Go Home</a>
   </div>
 {/if}

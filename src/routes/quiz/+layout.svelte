@@ -4,7 +4,7 @@ let { children } = $props()
 
 <div class="flex flex-col py-12">
   <div class="mx-auto">
-    <h1 class="text-3xl font-semibold py-4 flex items-end bg-linear-to-r from-[#FF5C0B] to-[#FF1D70] bg-clip-text text-transparent">
+    <h1 class="text-3xl font-semibold py-4 flex items-end colab-gradient">
       <img
         src="/favicon.svg"
         alt="Coding Lab Logo"
