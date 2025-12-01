@@ -1,5 +1,6 @@
 ---
 id: 0
+title: "I am a OIIA CAT"
 author: "OIIA CAT"
 answer_type: "choice"
 answer_choices: ["choice1", "choice2", "choice3"]

@@ -11,23 +11,24 @@ const QUIZ = {
 } as const
 </script>
 
-<div class="flex flex-col prose mx-auto">
-  <h2>문제 제목</h2>
-  <h3>문제 설명</h3>
-  {#if id !== null && id in QUIZ}
-      {@const quiz = QUIZ[id as keyof typeof QUIZ]}
-      {@const QuizComponent = quiz.component}
-      <svelte:component this={QuizComponent} />
-    {:else}
-      <p>알 수 없는 퀴즈입니다.</p>
-    {/if}
-</div>
-
 {#if id !== null && id in QUIZ}
   {@const meta = QUIZ[id as keyof typeof QUIZ].metadata}
+  <div class="flex flex-col prose mx-auto">
+    <h2>{meta.title}</h2>
+    <h3>문제 설명</h3>
+    {#if id !== null && id in QUIZ}
+        {@const quiz = QUIZ[id as keyof typeof QUIZ]}
+        {@const QuizComponent = quiz.component}
+        <svelte:component this={QuizComponent} />
+      {:else}
+        <p>알 수 없는 퀴즈입니다.</p>
+      {/if}
+  </div>
+
   <div class="flex flex-col gap-2 mt-4">
     <!-- Text -->
     {#if meta.answer_type === "text"}
+      <p>Answer:</p>
       <input type="text" class="input" />
     <!-- Choice -->
     {:else if meta.answer_type === "choice"}

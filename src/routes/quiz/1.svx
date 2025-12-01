@@ -1,5 +1,5 @@
 ---
-id: 0
+title: "I am a Rust developer"
 author: "OIIA CAT"
 answer_type: "text"
 answer: "I am a Rust developer"

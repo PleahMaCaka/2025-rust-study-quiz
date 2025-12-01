@@ -1,5 +1,5 @@
 interface QuizMetadata {
-  id: number
+  title: string
   author: string
   answer_type: "text" | "choice"
   answer_choices?: string[]
