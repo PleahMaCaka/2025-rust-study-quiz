@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/correctness/noUnknownProperty: ignore */
+
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "daisyui";

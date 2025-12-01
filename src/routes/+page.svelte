@@ -1,3 +1,6 @@
+<script>
+</script>
+
 <svelte:head>
   <title>Rust Study 2025 - Quiz</title>
 </svelte:head>

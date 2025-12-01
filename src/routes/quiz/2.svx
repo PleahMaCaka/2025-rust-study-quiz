@@ -1,0 +1,42 @@
+---
+id: 0
+author: "OIIA CAT"
+answer_type: "choice"
+answer_choices: ["choice1", "choice2", "choice3"]
+answer: "choice1"
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id tempus purus, sit amet pellentesque orci. Cras faucibus risus massa, sit amet eleifend risus lacinia ac. Nam porta arcu eu nisl faucibus rutrum. Praesent a felis augue. Donec ornare libero in nibh tincidunt, eget varius urna consectetur.
+
+```rust
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    match dotenv() {
+        Err(Error::Io(e)) if e.kind() == ErrorKind::NotFound => (),
+        Err(e) => return Err(e.into()),
+        _ => (),
+    }
+
+    init();
+
+    let token = var("DISCORD_TOKEN").expect("Environment Variable DISCORD_TOKEN not found!");
+    validate_token(&token)?;
+
+    let config = Config {
+        token,
+        vc_id: var("CHANNEL_ID")
+            .expect("Environment Variable CHANNEL_ID not found!")
+            .parse()
+            .unwrap(),
+        database_url: var("DATABASE_URL")?,
+    };
+
+    let mut bot = Bot::new(config).await?;
+
+    info!("Starting bot");
+
+    bot.start().await?;
+
+    Ok(())
+}
+```

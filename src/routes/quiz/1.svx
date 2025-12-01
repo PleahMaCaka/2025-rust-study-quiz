@@ -1,0 +1,15 @@
+---
+id: 0
+author: "OIIA CAT"
+answer_type: "text"
+answer: "I am a Rust developer"
+---
+
+Enter "I am a Rust developer"
+
+```rust
+async fn main() {
+  println!("I am a Rust developer");
+  Ok(())
+}
+```
